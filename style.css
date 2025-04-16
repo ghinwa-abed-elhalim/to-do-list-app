@@ -18,3 +18,11 @@ input, button {
     border-radius: 5px;
     font-size: 14px;
 }
+button {
+    background-color: #a17373;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #645151;
+}
