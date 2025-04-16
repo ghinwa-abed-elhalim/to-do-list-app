@@ -7,7 +7,14 @@ body {
     width: 350px;
     margin: auto;
     padding: 30px;
-    background: rgb(178, 151, 151);
+    background: rgb(213, 185, 185);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+input, button {
+    margin: 10px 5px;
+    padding: 8px;
+    border:  none;
+    border-radius: 5px;
+    font-size: 14px;
 }
