@@ -3,3 +3,11 @@ body {
     font-family: "Libre Baskerville", serif;
     background-color: rgb(178, 128, 128);
 }
+.container {
+    width: 350px;
+    margin: auto;
+    padding: 30px;
+    background: rgb(178, 151, 151);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
