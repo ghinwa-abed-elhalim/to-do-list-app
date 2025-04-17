@@ -40,3 +40,8 @@ li {
     align-items: center;
     border-radius: 5px;
 }
+li.completed {
+    text-decoration: line-through;
+    background-color: #ddd;
+    color: gray;
+}
