@@ -45,3 +45,16 @@ function toggle_complete(task_id) {
     }
     show_tasks();
 }
+
+function delete_task(task_id) {
+    let updated_tasks = [];
+
+    for (let i = 0; i < all_tasks.length; i++) {
+        if (all_tasks[i].id !== task_id) {
+            updated_tasks.push(all_tasks[i]);
+        }
+        
+    }
+    all_tasks = updated_tasks
+    show_tasks();
+}
