@@ -86,7 +86,7 @@ function show_tasks() {
         
     }
 
-// showing each task
+// each task
     for (let i = 0; i < filtered_tasks.length; i++) {
         let task = filtered_tasks[i];
 
@@ -102,12 +102,25 @@ function show_tasks() {
 // container buttons
         const button_container = document.createElement('div');
         button_container.classList.add('task-buttons')
-
+// button: done/undone
         const done_btn = document.createElement('button');
         done_btn.innerText = task.completed ? 'undo' : 'done';
         done_btn.addEventListener('click', function () {
             toggle_complete(task.id);
         });
+// delete_btn
+        const delete_btn = document.createElement('button');
+        delete_btn.innerText = '🗑️';
+        delete_btn.addEventListener('click', function () {
+            delete_task(task.id);
+        });
+
+        button_container.appendChild(done_btn);
+        button_container.appendChild(delete_btn);
+        
+        list_item.appendChild(task_text);
+        list_item.appendChild(button_container);
+
+        list_container.appendChild(list_item);
     }
-    
 }
