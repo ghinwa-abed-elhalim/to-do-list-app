@@ -35,3 +35,13 @@ function add_task() {
     input_field.value = '';
     show_tasks();
 }
+
+function toggle_complete(task_id) {
+    for (let i = 0; i < all_tasks.length; i++) {
+        if (all_tasks[i].id === task_id) {
+            all_tasks[i].completed = !all_tasks[i.completed];
+            break;
+        }
+    }
+    show_tasks();
+}
