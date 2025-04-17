@@ -3,12 +3,18 @@ let current_filter = 'All';
 
 const input_field = document.querySelector('.task-input')
 const add_button = document.querySelector('.add-task-btn')
-const list_container = document.querySelector('task-list')
+const list_container = document.querySelector('.task-list')
 const filter_buttons = document.querySelectorAll('.filter-btn')
 
 if (add_button) {
     add_button.addEventListener('click', add_task)
 }
+input_field.addEventListener('keypress', function(event){
+    if (event.key === 'Enter') {
+        add_task();
+    }
+});
+
 if (filter_buttons.length > 0) {
     filter_buttons.forEach(function (button) {
         button.addEventListener('click', function (){
@@ -39,7 +45,7 @@ function add_task() {
 function toggle_complete(task_id) {
     for (let i = 0; i < all_tasks.length; i++) {
         if (all_tasks[i].id === task_id) {
-            all_tasks[i].completed = !all_tasks[i.completed];
+            all_tasks[i].completed = !all_tasks[i].completed;
             break;
         }
     }
@@ -76,7 +82,7 @@ function show_tasks() {
             }
             
         }
-    } else if (current_filter === 'pending') {
+    } else if (current_filter === 'Pending') {
         for (let i = 0; i < all_tasks.length; i++) {
             if (all_tasks[i].completed === false) {
                 filtered_tasks.push(all_tasks[i]);
