@@ -17,3 +17,21 @@ if (filter_buttons.length > 0) {
         });
     });
 }
+
+function add_task() {
+    let text = input_field.value.trim()
+
+    if (text === '') {
+        alert('Please enter a task.');
+        return;
+    }
+    let task = {
+        id: Date.now(),
+        text: text,
+        completed: false
+    };
+
+    all_tasks.push(task);
+    input_field.value = '';
+    show_tasks();
+}
