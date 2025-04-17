@@ -54,3 +54,7 @@ li.completed {
     border-radius: 4px;
     padding: 5px 8px;
 }
+
+.task-buttons button:hover {
+    background-color: #814a4a;
+}
