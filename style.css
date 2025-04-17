@@ -45,3 +45,12 @@ li.completed {
     background-color: #ddd;
     color: gray;
 }
+
+.task-buttons button {
+    margin-left: 10px;
+    background-color: #a86c6c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+}
