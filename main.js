@@ -58,3 +58,56 @@ function delete_task(task_id) {
     all_tasks = updated_tasks
     show_tasks();
 }
+// removing all existing tasks
+function show_tasks() {
+    while (list_container.firstChild) {
+        list_container.removeChild(list_container.firstChild);
+    }
+
+// filtered tasks
+    let filtered_tasks = [];
+
+    if (current_filter === 'All') {
+        filtered_tasks = all_tasks;
+    } else if (current_filter === 'Completed') {
+        for (let i = 0; i < all_tasks.length; i++) {
+            if (all_tasks[i].completed === true) {
+               filtered_tasks.push(all_tasks[i]); 
+            }
+            
+        }
+    } else if (current_filter === 'pending') {
+        for (let i = 0; i < all_tasks.length; i++) {
+            if (all_tasks[i].completed === false) {
+                filtered_tasks.push(all_tasks[i]);
+            }
+            
+        }
+        
+    }
+
+// showing each task
+    for (let i = 0; i < filtered_tasks.length; i++) {
+        let task = filtered_tasks[i];
+
+        const list_item = document.createElement('li');
+
+        if (task.completed === true) {
+            list_item.classList.add('completed');
+        }
+
+// text Element task
+        const task_text = document.createElement('span');
+        task_text.innerText = task.text
+// container buttons
+        const button_container = document.createElement('div');
+        button_container.classList.add('task-buttons')
+
+        const done_btn = document.createElement('button');
+        done_btn.innerText = task.completed ? 'undo' : 'done';
+        done_btn.addEventListener('click', function () {
+            toggle_complete(task.id);
+        });
+    }
+    
+}
